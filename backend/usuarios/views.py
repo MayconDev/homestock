@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import generics, permissions
+from .serializers import UsuarioCadastroSerializer
 
-# Create your views here.
+
+class UsuarioCadastroView(generics.CreateAPIView):
+    serializer_class = UsuarioCadastroSerializer
+    permission_classes = [permissions.AllowAny]
